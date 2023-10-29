@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lawyer Finder App Countdown | VakeelDhundo</title>
+    <link rel="preload" href="Vakeel2.jpg" as="image"> <!-- Preloading the background image -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,54 +16,72 @@
             background-repeat: no-repeat;
             background-position: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             color: white;
-            position: relative; /* added to position whatsapp logo */
+            position: relative;
+            margin: 0;
+        }
+
+        #top-banner {
+            /* background-color: rgb(0, 8, 3); */
+            background-color: white;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 1.5em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #000;
+            font-family: Arial, sans-serif;
+            font-weight:bold;
         }
 
         #whatsapp-logo {
             position: absolute;
-            top: 7px;
-            right: 7px;
-            width: 30px;
+            top: 12.8px;
+            left: 15px;
+            width: 36px;
             cursor: pointer;
         }
 
         .countdown-container {
+            width: 350px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
+            background: hsla(0, 0%, 0%, 0.6);
             padding: 20px;
             border-radius: 15px;
         }
 
-        .countdown-container h1 {
-            font-size: 3em;
+        .countdown-container p {
+            font-size: 1.90em;
+            margin: 10px 0;
         }
 
         .countdown {
-            font-size: 2em;
+            font-size: 1em;
             font-weight: bold;
-        }
-
-        .domain-name {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <!-- WhatsApp Logo Link -->
+
+    <div id="top-banner">
+        With the Right Lawyer Comes the Right Outcome
+        
+    </div>
+
     <a href="https://whatsapp.com/channel/0029Va9Rqp2LY6d1xIDTer3t" target="_blank">
-        <img id="whatsapp-logo" src="whatsapp_channel_logo.jpg" alt="WhatsApp Channel">
+        <img id="whatsapp-logo" src="whatsapp_channel_logo1.jpg" alt="WhatsApp Channel">
     </a>
 
     <div class="countdown-container">
-        <h1>Lawyer Finder App</h1>
-        <p>Launching In:</p>
+        <h1>Vakeel Dhundo App</h1>
+        <p>Coming Soon</p>
         <div class="countdown">
             <span id="days"></span> Days
             <span id="hours"></span> Hours
@@ -73,31 +93,27 @@
     <script>
         const launchDate = new Date("2024-01-01 10:00:00").getTime();
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = launchDate - now;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerText = days;
-        document.getElementById("hours").innerText = hours;
-        document.getElementById("minutes").innerText = minutes;
-        document.getElementById("seconds").innerText = seconds;
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
 
-    if (distance < 0) {
-        clearInterval(countdownInterval);
-        document.querySelector('.countdown-container').innerHTML = "<h1>Application Launched!</h1>";
-    }
-}
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown-container').innerHTML = "<h1>Application Launched!</h1>";
+            }
+        }
 
-const countdownInterval = setInterval(updateCountdown, 1000);
-
-
-
-       
+        const countdownInterval = setInterval(updateCountdown, 1000);
     </script>
 </body>
 
